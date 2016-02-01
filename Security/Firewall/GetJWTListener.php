@@ -71,11 +71,11 @@ class GetJWTListener implements ListenerInterface
         }
 
         if ($this->options['post_only']) {
-            $username = trim($request->request->get($this->options['username_parameter'], null, true));
-            $password = $request->request->get($this->options['password_parameter'], null, true);
+            $username = trim($request->request->get($this->options['username_parameter'], null));
+            $password = $request->request->get($this->options['password_parameter'], null);
         } else {
-            $username = trim($request->get($this->options['username_parameter'], null, true));
-            $password = $request->get($this->options['password_parameter'], null, true);
+            $username = trim($request->get($this->options['username_parameter'], null));
+            $password = $request->get($this->options['password_parameter'], null);
         }
 
         try {
